@@ -1,3 +1,18 @@
+@keyframes colorChange {
+  0% {
+    background-color: white;
+    color: black;
+  }
+  50% {
+    background-color: #ff7597;
+    color: white;
+  }
+  100% {
+    background-color: white;
+    color: black;
+  }
+}
+
 body {
   margin: 0 auto;
   background-color: #121212;
@@ -11,13 +26,12 @@ body {
 }
 
 .poster {
-  max-height: 300px;
+  max-height: 350px;
   overflow: scroll;
 }
 .poster img {
   width: 100%;
   max-height: initial;
-  margin-top: -5%;
 }
 
 .nav {
@@ -62,8 +76,10 @@ body {
   opacity: 0.38;
 }
 
-.list-link a:hover {
-  background-color: #ff7597;
+.li-link a:hover {
+  animation-name: colorChange;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
 }
 
 .no-deco {
