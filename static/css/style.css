@@ -1,0 +1,32 @@
+body {
+  margin: 0 auto;
+}
+
+.poster {
+  max-height: 300px;
+  overflow: scroll;
+}
+
+.poster img {
+  width: 100%;
+  max-height: initial;
+  margin-top: -5%;
+}
+
+.nav {
+  background-color: #211d40;
+  overflow: hidden;
+}
+.nav a {
+  float: left;
+  color: whitesmoke;
+  text-decoration: none;
+  text-align: center;
+  padding: 14px 16px;
+}
+.nav a:hover {
+  background-color: #bbacf2;
+}
+.active {
+  background-color: #4c17bf;
+}
