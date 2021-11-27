@@ -1,5 +1,13 @@
 body {
   margin: 0 auto;
+  background-color: #121212;
+}
+
+.container {
+  margin: 0 auto;
+  width: 80%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .poster {
@@ -14,7 +22,7 @@ body {
 }
 
 .nav {
-  background-color: #211d40;
+  background-color: #3700b3;
   overflow: hidden;
 }
 .nav a {
@@ -25,8 +33,19 @@ body {
   padding: 14px 16px;
 }
 .nav a:hover {
-  background-color: #bbacf2;
+  background-color: #03dac6;
 }
 .active {
-  background-color: #4c17bf;
+  background-color: #bb86fc;
+}
+
+.alert {
+  position: relative;
+  padding: 1rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  color: white;
+  background-color: #cf6679;
+  border-color: #b00020;
 }
