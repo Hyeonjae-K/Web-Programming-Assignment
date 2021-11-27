@@ -16,12 +16,17 @@
     <a href="./confirmed.html">Confirmed</a>
   </div>
 
-  <div class="container">
-    <h1 class="li-link">
+  <div class="container high-color" style="text-align: center;">
+    <h1 id="timer" style="display: inline-block;"></h1>
+  </div>
+  <div class="container high-color" id="demo"></div>
+
+  <div class="container gap-top">
+    <h2 class="li-link">
       <a href="http://ncov.mohw.go.kr/baroView.do" class="high-color">
         코로나19(COVID-19)란?
       </a>
-    </h1>
+    </h2>
     <hr>
     <ol class="high-color">
       <li class="li-link"><a href="#li1" class="no-deco">개요</a></li>
@@ -86,7 +91,7 @@
           <td>
             <ul>
               <li>무증상, 경증, 중등증, 중증까지 다양</li>
-              <li><mark>주요 증상</mark>: 발열(37.5℃ 이상), 기침, 호흡곤란, 오한, 근육통, 두통, 인후통, 후각·미각소실</li>
+              <li>주요 증상: <mark>발열(37.5℃ 이상), 기침, 호흡곤란</mark>, 오한, 근육통, 두통, 인후통, 후각·미각소실</li>
               <li>그외 증상: 피로, 식욕감소, 가래, 소화기증상(오심, 구토, 설사 등), 혼돈, 어지러움, 콧물이나 코막힘, 객혈, 흉통, 결막염, 피부 증상 등</li>
             </ul>
             <p class="low-color">치명률: 지역, 인구집단연령 구조, 감염 상태 및 기타 요인에 의해 0.1~25%로 다양</p>
@@ -129,5 +134,25 @@
       </tbody>
     </table>
   </div>
+
+  <script>
+    var startDate = new Date("Dec 1, 2019 00:00:00").getTime();
+    
+    x = () => {
+
+    }
+    var x = setInterval(function() {
+      var now = new Date().getTime();
+      var distance = now - startDate;
+    
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+      document.getElementById("timer").innerHTML = days + "일 " + hours + "시간 "
+      + minutes + "분 " + seconds + "초";
+    }, 1000);
+    </script>
 </body>
 </html>

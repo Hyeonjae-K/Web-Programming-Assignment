@@ -102,5 +102,6 @@ td {
 }
 
 mark {
+  color: white;
   background-color: #ff7597;
 }
