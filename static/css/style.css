@@ -14,7 +14,6 @@ body {
   max-height: 300px;
   overflow: scroll;
 }
-
 .poster img {
   width: 100%;
   max-height: initial;
@@ -48,4 +47,44 @@ body {
   color: white;
   background-color: #cf6679;
   border-color: #b00020;
+}
+
+.high-color {
+  color: #ffffff;
+  opacity: 0.87;
+}
+.mednium-color {
+  color: #ffffff;
+  opacity: 0.6;
+}
+.low-color {
+  color: #ffffff;
+  opacity: 0.38;
+}
+
+.list-link a:hover {
+  background-color: #ff7597;
+}
+
+.no-deco {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.gap-top {
+  margin-top: 5rem;
+}
+
+table {
+  width: 100%;
+}
+table,
+th,
+td {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+
+mark {
+  background-color: #ff7597;
 }
