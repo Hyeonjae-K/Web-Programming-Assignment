@@ -51,7 +51,8 @@
 
   <script>
     async function getTitle(){
-      const response = fetch("http://192.168.0.15:5000/");
+      const url = prompt('api url을 입력해 주세요.')
+      const response = fetch(`${url}`);
       return response;
     }
 
