@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>코로나 현황</title>
+  <link rel="icon" href="../static/images/vaccine.png">
+  <link rel="stylesheet" href="../static/css/style.css">
+  <style>
+    tr {
+      height: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <a href="./index.html">Home</a>
+    <a href="./news.html">News</a>
+    <a class="active" href="./status.html">Status</a>
+  </div>
+
+  <div class="container high-color">
+    <table class="high-color">
+      <thead>
+        <tr>
+          <th colspan="4">
+            <label for="rate" style="font-size: 24px;">백신 접종률: <span id="rateText">0</span>%</label>
+            <progress id="rate" max="100" value="0" style="width: 90%; height: 25px;">0%</progress>
+          </th>
+        </tr>
+        <tr>
+          <td class="textCenter">누적 접종자</td>
+          <td><span id='vCnt'>0</span>명</td>
+          <td class="textCenter">누적 확진자</td>
+          <td><span id='cCnt'>0</span>명</td>
+        </tr>
+        <tr>
+          <td class="textCenter">신규 접종자</tde=>
+          <td>+ <span id='vNew'>0</span>명</td>
+          <td class="textCenter">신규 확진자</tde=>
+          <td>+ <span id='cNew'>0</span>명</td>
+        </tr>
+      </thead>
+    </table>
+  </div>
+
+  <div class="container">
+    <img src="../static/images/백신.jpg" style="width: 100%;">
+  </div>
+
+  <script>
+    async function getTitle(){
+      const response = fetch("http://192.168.0.15:5000/");
+      return response;
+    }
+
+    let temp = getTitle()
+    .then(res => res.json())
+    .then(function(data) {
+      console.log(data)
+      document.getElementById('rate').value = data.vRate
+      document.getElementById('rate').innerText = data.vRate + '%'
+      document.getElementById('rateText').innerText = data.vRate
+      document.getElementById('vNew').innerText = data.vNew
+      document.getElementById('cNew').innerHTML = data.cNew
+      document.getElementById('vCnt').innerHTML = data.vCount
+      document.getElementById('cCnt').innerHTML = data.cCount
+    });
+  </script>
+</body>
+</html>
