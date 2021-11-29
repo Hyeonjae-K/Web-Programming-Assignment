@@ -1,21 +1,40 @@
-@keyframes colorChange {
-  0% {
-    background-color: white;
-    color: black;
-  }
-  50% {
-    background-color: #ff7597;
-    color: white;
-  }
-  100% {
-    background-color: white;
-    color: black;
-  }
+body {
+  --color0: #002233;
+  --color1: #2a3d58;
+  --color2: #57597c;
+  --color3: #8a769e;
+  --color4: #c093ba;
+  --color5: #f8b3d2;
+  margin: 0 auto;
+  background-color: var(--color0);
 }
 
-body {
-  margin: 0 auto;
-  background-image: url("../images/cool-background.png");
+.nav {
+  background-color: var(--color2);
+  overflow: hidden;
+}
+.nav a {
+  float: left;
+  color: var(--color5);
+  text-decoration: none;
+  text-align: center;
+  padding: 14px 16px;
+}
+.nav a:hover {
+  background-color: var(--color3);
+  color: var(--color0);
+}
+.active {
+  background-color: var(--color1);
+}
+
+.bg1 {
+  background-image: url("../images/bg1.png");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 100% 100%;
+  height: 100px;
+  color: #ff0066;
 }
 
 .container {
@@ -23,6 +42,48 @@ body {
   width: 80%;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  color: white;
+}
+.gap-top {
+  margin-top: 7rem;
+}
+
+.link-changeColor {
+  color: var(--color5);
+}
+.link-changeColor:hover {
+  animation-name: colorChange;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+@keyframes colorChange {
+  0% {
+    background-color: var(--color0);
+    color: var(--color5);
+  }
+  50% {
+    background-color: var(--color5);
+    color: var(--color0);
+  }
+  100% {
+    background-color: var(--color0);
+    color: var(--color5);
+  }
+}
+
+li {
+  margin-top: 10px;
+}
+
+mark {
+  color: white;
+  font-weight: 700;
+  background-color: var(--color4);
+}
+
+.further {
+  color: var(--color4);
+  margin-left: 5px;
 }
 
 .poster {
@@ -32,24 +93,6 @@ body {
 .poster img {
   width: 100%;
   max-height: initial;
-}
-
-.nav {
-  background-color: #3700b3;
-  overflow: hidden;
-}
-.nav a {
-  float: left;
-  color: whitesmoke;
-  text-decoration: none;
-  text-align: center;
-  padding: 14px 16px;
-}
-.nav a:hover {
-  background-color: #03dac6;
-}
-.active {
-  background-color: #bb86fc;
 }
 
 .alert {
@@ -76,19 +119,9 @@ body {
   opacity: 0.38;
 }
 
-.li-link a:hover {
-  animation-name: colorChange;
-  animation-duration: 5s;
-  animation-iteration-count: infinite;
-}
-
 .no-deco {
   color: #ffffff;
   text-decoration: none;
-}
-
-.gap-top {
-  margin-top: 5rem;
 }
 
 table {
@@ -99,11 +132,6 @@ th,
 td {
   border: 1px solid white;
   border-collapse: collapse;
-}
-
-mark {
-  color: white;
-  background-color: #ff7597;
 }
 
 .textCenter {
