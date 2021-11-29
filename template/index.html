@@ -111,7 +111,7 @@
             예방
           </td>
           <td>
-            <div class="poster">
+            <div class="poster" onmouseover="zoomIn(this)" onmouseout="zoomOut(this)">
               <img src="../static/images/예방.jpg">
             </div>
           </td>
@@ -136,9 +136,6 @@
   <script>
     var startDate = new Date("Dec 1, 2019 00:00:00").getTime();
     
-    x = () => {
-
-    }
     var x = setInterval(function() {
       var now = new Date().getTime();
       var distance = now - startDate;
@@ -151,6 +148,14 @@
       document.getElementById("timer").innerHTML = days + "일 " + hours + "시간 "
       + minutes + "분 " + seconds + "초";
     }, 1000);
+
+    function zoomIn(e) {
+      e.style.maxHeight = '100%';
+    }
+
+    function zoomOut(e) {
+      e.style.maxHeight = '300px';
+    }
     </script>
 </body>
 </html>

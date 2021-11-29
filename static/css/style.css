@@ -87,12 +87,16 @@ mark {
 }
 
 .poster {
-  max-height: 350px;
-  overflow: scroll;
+  max-height: 300px;
+  overflow: hidden;
 }
 .poster img {
   width: 100%;
   max-height: initial;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .alert {
