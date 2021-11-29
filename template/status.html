@@ -51,8 +51,7 @@
 
   <script>
     async function getTitle(){
-      const url = prompt('api url을 입력해 주세요.')
-      const response = fetch(`${url}`);
+      const response = fetch('https://webprogramming-api.herokuapp.com/');
       return response;
     }
 
