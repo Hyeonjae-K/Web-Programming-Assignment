@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   <title>코로나 현황</title>
   <link rel="icon" href="../static/images/vaccine.png">
   <link rel="stylesheet" href="../static/css/style.css">
@@ -52,8 +51,7 @@
 
   <script>
     async function getTitle(){
-      const url = prompt('api url을 입력해 주세요.')
-      const response = fetch(`${url}`);
+      const response = fetch('http://192.168.0.15:5000');
       return response;
     }
 
