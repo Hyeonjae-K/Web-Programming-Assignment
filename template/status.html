@@ -11,6 +11,14 @@
     tr {
       height: 50px;
     }
+    .ml-5 {
+      margin-left: 5px;
+    }
+    img {
+      width: 32%;
+      margin: 0 auto;
+      position: relative;
+    }
   </style>
 </head>
 <body>
@@ -31,22 +39,24 @@
         </tr>
         <tr>
           <td class="textCenter">누적 접종자</td>
-          <td><span id='vCnt'>0</span>명</td>
+          <td><span class="ml-5"><span id='vCnt'>0</span>명</span></td>
           <td class="textCenter">누적 확진자</td>
-          <td><span id='cCnt'>0</span>명</td>
+          <td><span class="ml-5"><span id='cCnt'>0</span>명</span></td>
         </tr>
         <tr>
           <td class="textCenter">신규 접종자</tde=>
-          <td>+ <span id='vNew'>0</span>명</td>
+          <td><span class="ml-5">+ <span id='vNew'>0</span>명</span></td>
           <td class="textCenter">신규 확진자</tde=>
-          <td>+ <span id='cNew'>0</span>명</td>
+          <td><span class="ml-5">+ <span id='cNew'>0</span>명</span></td>
         </tr>
       </thead>
     </table>
   </div>
 
-  <div class="container">
-    <img src="../static/images/백신.jpg" style="width: 100%;">
+  <div class="container" style="text-align: center;">
+    <img src="../static/images/포스터1.jpg" onmouseover="zoomIn(this)" onmouseout="zoomOut(this)">
+    <img src="../static/images/포스터2.jpg" onmouseover="zoomIn(this)" onmouseout="zoomOut(this)">
+    <img src="../static/images/포스터3.jpg" onmouseover="zoomIn(this)" onmouseout="zoomOut(this)">
   </div>
 
   <script>
@@ -58,7 +68,6 @@
     let temp = getTitle()
     .then(res => res.json())
     .then(function(data) {
-      console.log(data)
       document.getElementById('rate').value = data.vRate
       document.getElementById('rate').innerText = data.vRate + '%'
       document.getElementById('rateText').innerText = data.vRate
@@ -67,6 +76,17 @@
       document.getElementById('vCnt').innerHTML = data.vCount
       document.getElementById('cCnt').innerHTML = data.cCount
     });
+
+    function zoomIn(e) {
+      e.style.zIndex = 1;
+      e.style.transform = "scale(1.5)";
+      e.style.transition = "all 0.5s";
+    }
+    function zoomOut(e) {
+      e.style.zIndex = 0;
+      e.style.transform = "scale(1)";
+      e.style.transition = "all 0.5s";
+    }
   </script>
 </body>
 </html>
