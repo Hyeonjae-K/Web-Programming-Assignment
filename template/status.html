@@ -41,15 +41,15 @@
           </th>
         </tr>
         <tr>
-          <td class="textCenter">누적 접종자</td>
+          <td class="text-center">누적 접종자</td>
           <td><span class="ml-5"><span id='vCnt'>0</span>명</span></td>
-          <td class="textCenter">누적 확진자</td>
+          <td class="text-center">누적 확진자</td>
           <td><span class="ml-5"><span id='cCnt'>0</span>명</span></td>
         </tr>
         <tr>
-          <td class="textCenter">신규 접종자</tde=>
+          <td class="text-center">신규 접종자</tde=>
           <td><span class="ml-5">+ <span id='vNew'>0</span>명</span></td>
-          <td class="textCenter">신규 확진자</tde=>
+          <td class="text-center">신규 확진자</tde=>
           <td><span class="ml-5">+ <span id='cNew'>0</span>명</span></td>
         </tr>
       </thead>
@@ -65,6 +65,7 @@
   </div>
 
   <script>
+    /*
     // 비동기적으로 api를 받아 promise 값 반환
     async function getTitle(){
       const response = fetch('https://webprogramming-api.herokuapp.com/');
@@ -82,6 +83,7 @@
       document.getElementById('vCnt').innerHTML = data.vCount
       document.getElementById('cCnt').innerHTML = data.cCount
     });
+    */
 
     // 전달된 태그의 배율과 z-index를 수정하여 확대와 축소를 해주는 함수
     function zoomIn(e) {
