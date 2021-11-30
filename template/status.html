@@ -22,12 +22,15 @@
   </style>
 </head>
 <body>
+  <!-- 네비게이션 바 -->
   <div class="nav">
     <a href="./index.html">Home</a>
     <a href="./news.html">News</a>
     <a class="active" href="./status.html">Status</a>
   </div>
 
+  <!-- 백신 접종률과 확진자 현황
+  api를 요청하여 값을 업데이트 함 -->
   <div class="container high-color">
     <table class="high-color">
       <thead>
@@ -53,6 +56,8 @@
     </table>
   </div>
 
+  <!-- 코로나 정보 포스터
+  마우스를 올리고 내리는 경우에 따라 포스터의 크기가 변함 -->
   <div class="container" style="text-align: center;">
     <img src="../static/images/포스터1.jpg" onmouseover="zoomIn(this)" onmouseout="zoomOut(this)">
     <img src="../static/images/포스터2.jpg" onmouseover="zoomIn(this)" onmouseout="zoomOut(this)">
@@ -60,11 +65,12 @@
   </div>
 
   <script>
+    // 비동기적으로 api를 받아 promise 값 반환
     async function getTitle(){
       const response = fetch('https://webprogramming-api.herokuapp.com/');
       return response;
     }
-
+    // json을 추출하여 각 태그에 값을 넣음
     let temp = getTitle()
     .then(res => res.json())
     .then(function(data) {
@@ -77,6 +83,7 @@
       document.getElementById('cCnt').innerHTML = data.cCount
     });
 
+    // 전달된 태그의 배율과 z-index를 수정하여 확대와 축소를 해주는 함수
     function zoomIn(e) {
       e.style.zIndex = 1;
       e.style.transform = "scale(1.5)";
